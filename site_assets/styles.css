@@ -179,3 +179,27 @@ h4 {
     justify-content: center;
     border-radius: 12px !important;
 }
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+
+#results .card {
+    transition: transform 0.3s ease;
+    border-radius: 15px !important;
+}
+
+#results .card:hover {
+    transform: scale(1.02);
+}
+
+.x-small {
+    font-size: 0.75rem !important;
+}
+
+/* tracking the difference */
+#results .display-6 {
+    color: #000000;
+}
