@@ -1,5 +1,5 @@
 body {
-    background-color: #fff2ed !important; 
+    background-color: #f4f7f2 !important; 
     color: #000000 !important; /* keep body text black */
 }
 
@@ -88,4 +88,34 @@ h1, h2, h4, .Intro {
 .btn-outline-primary:hover {
     background-color: #007bff !important;
     color: #ffffff !important;
+}
+
+/* conclusion specific styling */
+#conclusion h2 {
+    letter-spacing: -1px;
+}
+
+#conclusion .card {
+    transition: transform 0.3s ease;
+}
+
+#conclusion .card:hover {
+    transform: translateY(-5px);
+}
+
+.tracking-widest {
+    letter-spacing: 0.15em;
+}
+
+
+
+/* darker metric voxes */
+.metric-box {
+    background-color: #dee2e6 !important; 
+    color: #212529 !important;      
+    border: 1px solid #ced4da;         
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
 }
