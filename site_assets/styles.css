@@ -1,25 +1,39 @@
-/* --- 1. LIGHT NATURE THEME (CLEAN VERSION) --- */
+/* --- 1. LIGHT NATURE THEME --- */
 body {
-    background-color: #f4f7f2 !important; /* Soft Sage/Bone */
-    color: #000000 !important;           /* Pure Black for maximum readability */
+    background-color: #f4f7f2 !important; /* Soft Sage */
+    color: #000000 !important;           /* Black Body Text */
 }
 
-/* Keep headers a dark, organic Green so they still stand out */
+/* Headers: Now Pure Black and Bold */
 h1, h2, h4, .Intro {
-    color: #2d4a31 !important; /* Darker Forest Green */
-    font-weight: 700;
+    color: #000000 !important; 
+    font-weight: 800 !important;
+    text-transform: none;
 }
 
-/* --- 2. THE SLIDING EFFECT --- */
+/* --- 2. THE REPEATING SCROLL EFFECT --- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px); 
-    transition: all 0.9s ease-out;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
 }
 
+/* When the section is in view */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- 3. BLUE LINKEDIN BUTTONS --- */
+/* This forces them back to the original Bootstrap Blue */
+.btn-outline-primary {
+    color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff !important;
+    color: #ffffff !important;
 }
 
 /* --- 3. UI COMPONENTS --- */
