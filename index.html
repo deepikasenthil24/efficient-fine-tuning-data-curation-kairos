@@ -354,9 +354,15 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Trigger when element is 100px into view
-                if (elementTop < windowHeight - elementVisible) {
+                var elementBottom = reveals[i].getBoundingClientRect().bottom;
+                var elementVisible = 100;
+        
+                // If the section is inside the "visible window"
+                if (elementTop < windowHeight - elementVisible && elementBottom > 0) {
                     reveals[i].classList.add("active");
+                } else {
+                    // REMOVE the class when it leaves the screen so it can re-animate
+                    reveals[i].classList.remove("active");
                 }
             }
         }
