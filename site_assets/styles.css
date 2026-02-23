@@ -1,26 +1,25 @@
 /* LIGHT NATURE THEME */
 body {
-    background-color: #f1f8f6 !important; /* Soft Sage Mint - much lighter */
-    color: #2d3a35 !important;           /* Dark slate green for text */
+    background-color: #f4f7f2 !important; /* Soft Sage/Bone - a light, clean nature color */
+    color: #2d3a35 !important;           /* Dark green-grey text for readability */
 }
 
-/* Make headers look like moss/earth */
+/* Headers in a nice Forest Green */
 h1, h2, h4, .Intro {
-    color: #386641 !important; /* Deep natural green */
+    color: #386641 !important; 
 }
 
-/* --- THE SCROLLING EFFECT --- */
-/* This hides the section and moves it down slightly */
+/* --- THE SLIDING EFFECT --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px); 
-    transition: all 0.8s ease-out; /* The speed of the slide-in */
+    transform: translateY(40px); /* This starts the section 40px lower */
+    transition: all 0.9s ease-out; /* This makes it "glide" up for 0.9 seconds */
 }
 
-/* This is the 'on' switch the JavaScript flips */
+/* When the JavaScript detects you've scrolled here, it adds this class */
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Glides up to its original spot */
 }
 
 
