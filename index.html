@@ -281,7 +281,7 @@
                 </div>
             </div>
         
-            <h4 class="mb-4 text-center">The 4 Fine-tuning Datasets</h4>
+            <h4 class="mb-4 text-center">4 Fine-tuning Datasets</h4>
             <p class="text-center text-muted mb-4 small">Models were fine-tuned on the following datasets:</p>
             
             <div class="row g-3 mb-5">
@@ -332,33 +332,43 @@
                 </div>
             </div>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-10">
-                    <div class="card border-0 shadow-sm p-4 bg-white">
-                        <h5 class="fw-bold mb-4 text-center">ResNet-18 Performance: Data Efficiency in Action</h5>
-                        <div class="row text-center">
-                            <div class="col-4 border-end">
-                                <h6 class="text-muted small uppercase">Full (36k)</h6>
-                                <div class="display-6 fw-bold">73.7%</div>
-                                <p class="small text-muted">Accuracy</p>
-                                <div class="badge bg-light text-dark">695s Runtime</div>
-                            </div>
-                            <div class="col-4 border-end">
-                                <h6 class="text-primary small uppercase">KAIROS Curated</h6>
-                                <div class="display-6 fw-bold text-success">73.3%</div>
-                                <p class="small text-muted">Accuracy</p>
-                                <div class="badge bg-success text-white">353s Runtime</div>
-                            </div>
-                            <div class="col-4 d-flex align-items-center justify-content-center">
-                                <div class="text-start">
-                                    <h6 class="fw-bold text-success"><i class="bi bi-graph-up-arrow"></i> 99.4% Parity</h6>
-                                    <p class="x-small text-muted mb-0">Achieved nearly identical accuracy with 50% less training time.</p>
-                                </div>
-                            </div>
+            <div class="my-5"></div>
+
+        <div class="card border-0 shadow-sm p-4 bg-white reveal">
+            <h4 class="text-center mb-4">ResNet-50 Performance</h4>
+            
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7 border-end">
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <div class="text-uppercase small text-muted mb-1">Accuracy</div>
+                            <div class="h2 fw-bold text-success mb-0">73.3%</div>
+                            <div class="x-small text-muted">vs 73.7% (Full)</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-uppercase small text-muted mb-1">AUC</div>
+                            <div class="h2 fw-bold text-success mb-0">0.955</div>
+                            <div class="x-small text-muted">High Reliability</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-uppercase small text-muted mb-1">F1-Score</div>
+                            <div class="h2 fw-bold text-success mb-0">0.717</div>
+                            <div class="x-small text-muted">Class Balance</div>
                         </div>
                     </div>
                 </div>
+        
+                <div class="col-lg-5 ps-lg-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge bg-success me-2">99.4% Parity</span>
+                        <span class="small fw-bold">Result Highlight</span>
+                    </div>
+                    <p class="small text-muted mb-0">
+                        The <strong>KAIROS Curated</strong> subset achieved virtually identical performance to the full dataset while requiring only <strong>353s</strong> of training time—a <span class="text-success fw-bold">~50% reduction</span> in computational cost.
+                    </p>
+                </div>
             </div>
+        </div>
 
         </section>
 
