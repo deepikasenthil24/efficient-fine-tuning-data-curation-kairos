@@ -1,10 +1,9 @@
-/* --- 1. LIGHT NATURE THEME --- */
 body {
-    background-color: #f4f7f2 !important; /* Soft Sage */
-    color: #000000 !important;           /* Black Body Text */
+    background-color: #fff2ed !important; 
+    color: #000000 !important; /* Keep body text black for clarity */
 }
 
-/* Headers: Now Pure Black and Bold */
+/* Headers: pure Black and Bold */
 h1, h2, h4, .Intro {
     color: #000000 !important; 
     font-weight: 800 !important;
@@ -76,7 +75,7 @@ h1, h2, h4, .Intro {
     margin: 10px auto;
 }
 
-/* 1. Force LinkedIn boxes to be Blue */
+/* force LinkedIn boxes to be Blue */
 .btn-outline-primary {
     color: #007bff !important;
     border-color: #007bff !important;
