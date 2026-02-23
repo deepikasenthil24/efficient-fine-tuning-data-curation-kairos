@@ -1,36 +1,27 @@
-
+/* LIGHT NATURE THEME */
 body {
-    background-color: #061612 !important; /* Deep Forest Green */
-    color: #e8f5e9 !important;           /* Minty white text */
+    background-color: #f1f8f6 !important; /* Soft Sage Mint - much lighter */
+    color: #2d3a35 !important;           /* Dark slate green for text */
 }
 
-/* Keep your cards white so the data is easy to read */
-.card {
-    background-color: #ffffff !important;
-    color: #212529 !important; 
-    border: none !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
-}
-
-/* Make headers look organic */
+/* Make headers look like moss/earth */
 h1, h2, h4, .Intro {
-    color: #95d5b2 !important;
+    color: #386641 !important; /* Deep natural green */
 }
 
-/* THE SCROLL EFFECT: This hides the content initially */
+/* --- THE SCROLLING EFFECT --- */
+/* This hides the section and moves it down slightly */
 .reveal {
-    position: relative;
     opacity: 0;
-    transform: translateY(50px); /* Sits 50px lower */
-    transition: all 1.0s ease-out; /* Slides up over 1 second */
+    transform: translateY(30px); 
+    transition: all 0.8s ease-out; /* The speed of the slide-in */
 }
 
-/* This is triggered by your JavaScript when you scroll */
+/* This is the 'on' switch the JavaScript flips */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 
 /* Class 1 (Reoffenders) - Light Red */
