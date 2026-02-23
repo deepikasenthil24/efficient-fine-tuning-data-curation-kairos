@@ -264,60 +264,75 @@
         <section id="finetuning" class="container my-5 reveal">
             <h2 class="mb-4">Downstream Model Fine-Tuning</h2>
             
-            <p class="mb-4">We compared two efficient fine-tuning strategies to identify the optimal balance between data volume and model precision:</p>
-            
+            <p class="mb-4">We compared two fine-tuning methods to identify the optimal balance between data volume and model precision:</p>
             <div class="row g-4 mb-5">
                 <div class="col-md-6">
                     <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
                         <div class="card-body">
-                            <h5 class="fw-bold"><i class="bi bi-layers"></i> Partial Unfreezing</h5>
-                            <p class="small mb-0">Training only the final ResNet layers to adapt the pre-trained weights to our specific insect categories.</p>
+                            <h5 class="fw-bold">Partial Unfreezing</h5>
+                            <p class="small mb-0">Training only the final ResNet layers to adapt pre-trained weights to our specific insect categories.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
                         <div class="card-body">
-                            <h5 class="fw-bold"><i class="bi bi-cpu"></i> LoRA Adaptation</h5>
-                            <p class="small mb-0">Low-Rank Adaptation: injecting trainable rank-decomposition matrices into the model for parameter-efficient learning.</p>
+                            <h5 class="fw-bold">LoRA Adaptation</h5>
+                            <p class="small mb-0">Low-Rank Adaptation: injecting trainable rank-decomposition matrices for parameter-efficient learning.</p>
                         </div>
                     </div>
                 </div>
             </div>
         
-            <div class="card border-0 shadow-sm rounded-4 mb-5">
-                <div class="card-body p-4">
-                    <h4 class="mb-4 text-center">Experimental Scope</h4>
-                    <div class="row text-center g-4">
-                        <div class="col-6 col-lg-3">
-                            <div class="fs-2">📦</div>
-                            <h6 class="fw-bold mt-2">36k Images</h6>
-                            <p class="small text-muted">Full iNaturalist Subset</p>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="fs-2">🎲</div>
-                            <h6 class="fw-bold mt-2">10x Trials</h6>
-                            <p class="small text-muted">Randomly Sampled Baselines</p>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="fs-2">💎</div>
-                            <h6 class="fw-bold mt-2">KAIROS Curated</h6>
-                            <h6 class="small text-muted">Influence-Based Valuation</h6>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="fs-2">🧹</div>
-                            <h6 class="fw-bold mt-2">Noise-Curated</h6>
-                            <p class="small text-muted">Removing Artificial Noise</p>
-                        </div>
+            <h4 class="mb-4 text-center">The 4 Experimental Tracks</h4>
+            <p class="text-center text-muted mb-4 small">Models were fine-tuned on the following datasets:</p>
+            
+            <div class="row g-3 mb-5">
+                <div class="col-md-3">
+                    <div class="card h-100 text-center border-0 bg-white shadow-sm p-3">
+                        <div class="fs-1">📦</div>
+                        <h6 class="fw-bold">1. Full Dataset</h6>
+                        <p class="x-small text-muted mb-0">~36,000 images (iNaturalist 2021 subset)</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center border-0 bg-white shadow-sm p-3">
+                        <div class="fs-1">🎲</div>
+                        <h6 class="fw-bold">2. Random Subsets</h6>
+                        <p class="x-small text-muted mb-0">10 trials to establish a rigorous performance baseline</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center border-0 bg-white shadow-sm p-3">
+                        <div class="fs-1">💎</div>
+                        <h6 class="fw-bold">3. KAIROS Curated</h6>
+                        <p class="x-small text-muted mb-0">High-value images selected via influence valuation</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center border-0 bg-white shadow-sm p-3">
+                        <div class="fs-1">🧹</div>
+                        <h6 class="fw-bold">4. Noise-Curated</h6>
+                        <p class="x-small text-muted mb-0">Comparing raw noise-injection vs. KAIROS-cleaned data</p>
                     </div>
                 </div>
             </div>
         
-            <div class="d-flex justify-content-center flex-wrap gap-3 py-3 border-top border-bottom">
-                <span class="badge rounded-pill bg-dark px-3 py-2">Accuracy</span>
-                <span class="badge rounded-pill bg-dark px-3 py-2">F1-Score</span>
-                <span class="badge rounded-pill bg-dark px-3 py-2">AUC</span>
-                <span class="badge rounded-pill bg-dark px-3 py-2">Training Runtime</span>
+            <div class="card border-0 shadow-sm bg-dark text-white p-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center text-lg-start">
+                        <h5 class="mb-1">Performance Tracking</h5>
+                        <p class="small text-secondary mb-0">Metrics collected for <u>each</u> experiment:</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="d-flex justify-content-around flex-wrap gap-2 mt-3 mt-lg-0">
+                            <span class="badge bg-light text-dark p-2 px-3"><i class="bi bi-check2-circle text-success me-1"></i> Accuracy</span>
+                            <span class="badge bg-light text-dark p-2 px-3"><i class="bi bi-check2-circle text-success me-1"></i> F1-Score</span>
+                            <span class="badge bg-light text-dark p-2 px-3"><i class="bi bi-check2-circle text-success me-1"></i> AUC</span>
+                            <span class="badge bg-light text-dark p-2 px-3"><i class="bi bi-check2-circle text-success me-1"></i> Runtime</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
