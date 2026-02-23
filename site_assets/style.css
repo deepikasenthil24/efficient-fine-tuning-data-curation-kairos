@@ -1,118 +1,8 @@
-/* Class 1 (Reoffenders) - Light Red */
-.class1-header, .class1-data {
-  color: #721c24 !important;  /* Darker Red Text */
-}
-
-/* Class 0 (Non-Reoffenders) - Light Blue */
-.class0-header, .class0-data {
-  color: #0c5460 !important;  /* Darker Blue Text */
-}
-
-.card {
-  border-radius: 10px;
-}
-
-/* Custom colors */
-.text-primary {
-  color: #007bff !important;  /* Blue for Pre-processing */
-}
-
-.text-success {
-  color: #28a745 !important;  /* Green for Post-processing */
-}
-
-/* Accordion Button Styling */
-.accordion-button {
-  font-weight: bold;
-}
-
-#edaCanvas {
-  border-radius: 10px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-/* Chart Container */
-.chart-container {
-  width: 550px; /* Fixed width */
-  height: 350px; /* Fixed height to match canvas height */
-  margin: auto;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-/* Responsive Chart Adjustments */
-@media (max-width: 768px) {
-  .chart-container {
-    width: 380px;
-    height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .chart-container {
-    width: 230px;
-    height: 230px;
-  }
-}
-
-.tooltip {
-  position: absolute;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 5px;
-  font-size: 14px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.map-legend-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* Ensures responsiveness */
-  gap: 20px;
-}
-
-/* Legend container */
-.legend-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 5px;
-  max-width: 700px; /* Prevents excessive stretching */
-  margin: 10px auto; /* Centers the legend */
-}
-
-/* Legend item (each color block and label) */
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Legend color boxes */
-.legend-item div {
-  width: 20px;
-  height: 20px;
-}
-
-
 :root {
   --primary-green: #2d6a4f;
   --light-green: #95d5b2;
-  --dark-bg: #081c15; /* Deep forest dark background */
-  --card-bg: #1b4332;
+  --dark-bg: #0b1a14;
+  --card-bg: #152c22;
   --text-light: #d8f3dc;
 }
 
@@ -123,35 +13,34 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Hero Section */
-.hero-section {
-  padding: 100px 0;
-  background: radial-gradient(circle at top right, #1b4332, #081c15);
+/* Section Title Styling */
+.section-title {
+    color: var(--light-green);
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-green);
+    display: inline-block;
+    margin-bottom: 1.5rem;
 }
 
-/* Image + Text Block (Matching your attachment) */
-.feature-block {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 80px 0;
+/* Custom Card Styling */
+.dark-card {
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(149, 213, 178, 0.2) !important;
+  color: var(--text-light) !important;
+  border-radius: 15px;
 }
 
-.feature-image-container img {
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  width: 100%;
-  max-width: 600px;
+.btn-dark-green {
+    background-color: var(--primary-green);
+    color: white;
 }
 
-.feature-text-card {
-  background: var(--card-bg);
-  padding: 40px;
-  border-radius: 24px;
-  border: 1px solid var(--primary-green);
+.btn-dark-green:hover {
+    background-color: #1b4332;
+    color: var(--light-green);
 }
 
-/* Scrolling Reveal Effect */
+/* Reveal Animation */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -161,4 +50,18 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Keeping your Chart logic */
+.chart-container {
+  width: 100%;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.footer {
+    background-color: #05100c;
+    border-top: 1px solid var(--primary-green);
 }
