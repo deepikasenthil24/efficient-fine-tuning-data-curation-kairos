@@ -106,3 +106,59 @@
   width: 20px;
   height: 20px;
 }
+
+
+:root {
+  --primary-green: #2d6a4f;
+  --light-green: #95d5b2;
+  --dark-bg: #081c15; /* Deep forest dark background */
+  --card-bg: #1b4332;
+  --text-light: #d8f3dc;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 100px 0;
+  background: radial-gradient(circle at top right, #1b4332, #081c15);
+}
+
+/* Image + Text Block (Matching your attachment) */
+.feature-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 0;
+}
+
+.feature-image-container img {
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 600px;
+}
+
+.feature-text-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--primary-green);
+}
+
+/* Scrolling Reveal Effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
