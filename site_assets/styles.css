@@ -1,3 +1,38 @@
+
+body {
+    background-color: #061612 !important; /* Deep Forest Green */
+    color: #e8f5e9 !important;           /* Minty white text */
+}
+
+/* Keep your cards white so the data is easy to read */
+.card {
+    background-color: #ffffff !important;
+    color: #212529 !important; 
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+/* Make headers look organic */
+h1, h2, h4, .Intro {
+    color: #95d5b2 !important;
+}
+
+/* THE SCROLL EFFECT: This hides the content initially */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px); /* Sits 50px lower */
+    transition: all 1.0s ease-out; /* Slides up over 1 second */
+}
+
+/* This is triggered by your JavaScript when you scroll */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 /* Class 1 (Reoffenders) - Light Red */
 .class1-header, .class1-data {
   color: #721c24 !important;  /* Darker Red Text */
