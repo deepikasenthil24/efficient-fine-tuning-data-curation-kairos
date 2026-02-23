@@ -1,29 +1,29 @@
 body {
     background-color: #fff2ed !important; 
-    color: #000000 !important; /* Keep body text black for clarity */
+    color: #000000 !important; /* keep body text black */
 }
 
-/* Headers: pure Black and Bold */
+/* Headers: black and bold */
 h1, h2, h4, .Intro {
     color: #000000 !important; 
     font-weight: 800 !important;
     text-transform: none;
 }
 
-/* --- 2. THE REPEATING SCROLL EFFECT --- */
+/* REPEATING SCROLL EFFECT */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
 
-/* When the section is in view */
+/* when the section is in view */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- 3. BLUE LINKEDIN BUTTONS --- */
+/* BLUE LINKEDIN BUTTONS */
 /* This forces them back to the original Bootstrap Blue */
 .btn-outline-primary {
     color: #007bff !important;
@@ -35,7 +35,7 @@ h1, h2, h4, .Intro {
     color: #ffffff !important;
 }
 
-/* --- 3. UI COMPONENTS --- */
+/* UI COMPONENTS */
 .card {
     border-radius: 12px;
     background-color: #ffffff !important; /* White cards pop against the sage bg */
@@ -44,7 +44,7 @@ h1, h2, h4, .Intro {
     color: #000000 !important; /* Ensures text inside cards is also black */
 }
 
-/* Make the blue buttons match the nature theme */
+/* make the blue buttons match the nature theme */
 .btn-outline-primary {
     color: #2d4a31 !important;
     border-color: #2d4a31 !important;
@@ -55,7 +55,7 @@ h1, h2, h4, .Intro {
     color: #ffffff !important;
 }
 
-/* --- 4. CHART & LEGEND STYLING --- */
+/* CHART & LEGEND STYLING */
 .chart-container {
     width: 550px;
     height: 350px;
@@ -75,7 +75,7 @@ h1, h2, h4, .Intro {
     margin: 10px auto;
 }
 
-/* force LinkedIn boxes to be Blue */
+/* force LinkedIn boxes to be blue */
 .btn-outline-primary {
     color: #007bff !important;
     border-color: #007bff !important;
