@@ -160,3 +160,28 @@ h4 {
     text-align: center !important;
     width: 100%;
 }
+
+.eda-spacing {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+}
+
+
+#conclusion .display-5 {
+    font-size: 2.2rem !important; /* smaller text for a smaller box */
+    line-height: 1.2;
+}
+
+#conclusion .card {
+    min-height: 180px; /* ensures a consistent shape */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px !important;
+}
+
+/* tracking wider fix for smaller header */
+.tracking-wider {
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
