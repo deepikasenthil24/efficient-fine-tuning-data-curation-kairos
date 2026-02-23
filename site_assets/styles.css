@@ -75,6 +75,10 @@ h1, h2, h4, .Intro {
     margin: 10px auto;
 }
 
+.x-small {
+    font-size: 0.75rem !important;
+}
+
 /* force LinkedIn boxes to be blue */
 .btn-outline-primary {
     color: #007bff !important;
