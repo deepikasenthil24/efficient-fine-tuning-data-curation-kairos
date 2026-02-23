@@ -1,156 +1,60 @@
-/* LIGHT NATURE THEME */
+/* --- 1. LIGHT NATURE THEME --- */
 body {
-    background-color: #f4f7f2 !important; /* Soft Sage/Bone - a light, clean nature color */
-    color: #2d3a35 !important;           /* Dark green-grey text for readability */
+    background-color: #f4f7f2 !important; /* Soft Sage/Bone */
+    color: #2d3a35 !important;           /* Dark slate text */
 }
 
-/* Headers in a nice Forest Green */
+/* Headers in Forest Green */
 h1, h2, h4, .Intro {
     color: #386641 !important; 
 }
 
-/* --- THE SLIDING EFFECT --- */
+/* --- 2. THE SLIDING EFFECT --- */
+/* This starts the sections invisible and lower down */
 .reveal {
     opacity: 0;
-    transform: translateY(40px); /* This starts the section 40px lower */
-    transition: all 0.9s ease-out; /* This makes it "glide" up for 0.9 seconds */
+    transform: translateY(40px); 
+    transition: all 0.9s ease-out;
 }
 
-/* When the JavaScript detects you've scrolled here, it adds this class */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0); /* Glides up to its original spot */
-}
-
-
-/* Class 1 (Reoffenders) - Light Red */
-.class1-header, .class1-data {
-  color: #721c24 !important;  /* Darker Red Text */
-}
-
-/* Class 0 (Non-Reoffenders) - Light Blue */
-.class0-header, .class0-data {
-  color: #0c5460 !important;  /* Darker Blue Text */
-}
-
-.card {
-  border-radius: 10px;
-}
-
-/* Custom colors */
-.text-primary {
-  color: #007bff !important;  /* Blue for Pre-processing */
-}
-
-.text-success {
-  color: #28a745 !important;  /* Green for Post-processing */
-}
-
-/* Accordion Button Styling */
-.accordion-button {
-  font-weight: bold;
-}
-
-#edaCanvas {
-  border-radius: 10px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-/* Chart Container */
-.chart-container {
-  width: 550px; /* Fixed width */
-  height: 350px; /* Fixed height to match canvas height */
-  margin: auto;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-/* Responsive Chart Adjustments */
-@media (max-width: 768px) {
-  .chart-container {
-    width: 380px;
-    height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .chart-container {
-    width: 230px;
-    height: 230px;
-  }
-}
-
-.tooltip {
-  position: absolute;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 5px;
-  font-size: 14px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.map-legend-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* Ensures responsiveness */
-  gap: 20px;
-}
-
-/* Legend container */
-.legend-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 5px;
-  max-width: 700px; /* Prevents excessive stretching */
-  margin: 10px auto; /* Centers the legend */
-}
-
-/* Legend item (each color block and label) */
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Legend color boxes */
-.legend-item div {
-  width: 20px;
-  height: 20px;
-}
-
-/* Dark Forest Theme */
-body {
-    background-color: #061612 !important; 
-    color: #e8f5e9 !important;
-}
-
-/* Make headers look organic green */
-h1, h2, h4, .Intro {
-    color: #95d5b2 !important;
-}
-
-/* Animation Logic */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
+/* This is triggered by your JavaScript when you scroll */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- 3. CHART & CARD STYLING (KEEPING YOUR DATA VISUALS) --- */
+.card {
+  border-radius: 10px;
+  background-color: white !important; /* Keep cards white for readability */
+  border: 1px solid #e0e6df !important;
+}
+
+.chart-container {
+  width: 550px;
+  height: 350px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Chart Adjustments */
+@media (max-width: 768px) {
+  .chart-container { width: 380px; height: 280px; }
+}
+
+/* Legend and Tooltip Styling */
+.legend-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+/* Your original Class colors */
+.class1-header, .class1-data { color: #721c24 !important; }
+.class0-header, .class0-data { color: #0c5460 !important; }
