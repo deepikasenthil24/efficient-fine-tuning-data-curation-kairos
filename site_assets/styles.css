@@ -107,9 +107,32 @@ h1, h2, h4, .Intro {
     letter-spacing: 0.15em;
 }
 
+/* center all section headers */
+h2 {
+    text-align: center !important;
+    width: 100%;
+    margin-bottom: 2rem !important;
+}
 
 
-/* darker metric voxes */
+/* conclusion metric card is centered */
+#conclusion .card {
+    margin: 0 auto; /* Centers the block itself */
+    max-width: 600px;
+    border-radius: 20px !important;
+    border-bottom: 5px solid #28a745 !important;
+    transition: transform 0.3s ease;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+    display: block;
+    text-align: center;
+}
+
+
+
+/* darker metric boxes */
 .metric-box {
     background-color: #dee2e6 !important; 
     color: #212529 !important;      
