@@ -142,3 +142,16 @@ h2 {
     border-radius: 8px;
     display: inline-block;
 }
+
+
+header p, 
+.mentor-text, 
+#mentor-section p {
+    color: #212529 !important; /* Deep charcoal */
+    font-weight: 500;
+}
+
+#mentor-box {
+    color: #000000 !important;
+    font-weight: 600;
+}
