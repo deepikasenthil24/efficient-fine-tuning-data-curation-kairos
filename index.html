@@ -264,25 +264,60 @@
         <section id="finetuning" class="container my-5 reveal">
             <h2 class="mb-4">Downstream Model Fine-Tuning</h2>
             
-            <p class="lead text-muted mb-4">We tested two architectural methods to find the most efficient way to teach our model.</p>
-            <div class="row g-3 mb-5">
+            <p class="mb-4">We compared two efficient fine-tuning strategies to identify the optimal balance between data volume and model precision:</p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
+                        <div class="card-body">
+                            <h5 class="fw-bold"><i class="bi bi-layers"></i> Partial Unfreezing</h5>
+                            <p class="small mb-0">Training only the final ResNet layers to adapt the pre-trained weights to our specific insect categories.</p>
+                        </div>
+                    </div>
                 </div>
-        
-            <div class="bg-light p-4 rounded-4 mb-5">
-                <h4 class="mb-3">Experimental Scope</h4>
-                <div class="row text-center">
-                    <div class="col-6 col-md-3"><h5>36k</h5><p class="small">Full Images</p></div>
-                    <div class="col-6 col-md-3"><h5>10x</h5><p class="small">Random Trials</p></div>
-                    <div class="col-6 col-md-3"><h5>KAIROS</h5><p class="small">High-Value</p></div>
-                    <div class="col-6 col-md-3"><h5>🧹</h5><p class="small">Noise Removal</p></div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
+                        <div class="card-body">
+                            <h5 class="fw-bold"><i class="bi bi-cpu"></i> LoRA Adaptation</h5>
+                            <p class="small mb-0">Low-Rank Adaptation: injecting trainable rank-decomposition matrices into the model for parameter-efficient learning.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         
-            <div class="d-flex justify-content-around py-3 border-top border-bottom">
-                <span class="badge bg-dark">Accuracy</span>
-                <span class="badge bg-dark">F1-Score</span>
-                <span class="badge bg-dark">AUC</span>
-                <span class="badge bg-dark">Runtime</span>
+            <div class="card border-0 shadow-sm rounded-4 mb-5">
+                <div class="card-body p-4">
+                    <h4 class="mb-4 text-center">Experimental Scope</h4>
+                    <div class="row text-center g-4">
+                        <div class="col-6 col-lg-3">
+                            <div class="fs-2">📦</div>
+                            <h6 class="fw-bold mt-2">36k Images</h6>
+                            <p class="small text-muted">Full iNaturalist Subset</p>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="fs-2">🎲</div>
+                            <h6 class="fw-bold mt-2">10x Trials</h6>
+                            <p class="small text-muted">Randomly Sampled Baselines</p>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="fs-2">💎</div>
+                            <h6 class="fw-bold mt-2">KAIROS Curated</h6>
+                            <h6 class="small text-muted">Influence-Based Valuation</h6>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="fs-2">🧹</div>
+                            <h6 class="fw-bold mt-2">Noise-Curated</h6>
+                            <p class="small text-muted">Removing Artificial Noise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="d-flex justify-content-center flex-wrap gap-3 py-3 border-top border-bottom">
+                <span class="badge rounded-pill bg-dark px-3 py-2">Accuracy</span>
+                <span class="badge rounded-pill bg-dark px-3 py-2">F1-Score</span>
+                <span class="badge rounded-pill bg-dark px-3 py-2">AUC</span>
+                <span class="badge rounded-pill bg-dark px-3 py-2">Training Runtime</span>
             </div>
         </section>
 
