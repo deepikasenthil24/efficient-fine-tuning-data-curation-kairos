@@ -11,7 +11,7 @@ section, h2 {
 
 /* NAVIGATION BAR STYLING */
 .custom-nav {
-    background-color: #fff2ed !important;
+    background-color: #ff5c5c !important;
     border-bottom: none !important;  
     padding: 0.2rem 0 !important;      
     min-height: 50px !important;  
@@ -20,7 +20,7 @@ section, h2 {
 
 .custom-nav .navbar-brand, 
 .custom-nav .nav-link {
-    color: #ffffff !important;    
+    color: #000000 !important;    
     font-size: 0.85rem;               
     font-weight: 500;
 }
