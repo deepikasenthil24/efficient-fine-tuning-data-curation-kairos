@@ -1,6 +1,27 @@
 body {
-    background-color: #f4f7f2 !important; 
+    background-color: #f7faf7 !important; 
     color: #000000 !important; /* keep body text black */
+}
+
+/* NAVIGATION BAR STYLING */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+h2 {
+    scroll-margin-top: 90px; /* ensures navbar doesn't cover titles when clicking links */
 }
 
 /* Headers: black and bold */
