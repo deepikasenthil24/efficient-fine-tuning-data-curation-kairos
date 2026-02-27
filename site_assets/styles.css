@@ -242,6 +242,15 @@ h4 {
     color: #000000;
 }
 
+.display-6 {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
 
 /* styling for the results spotlight */
 .border-end {
