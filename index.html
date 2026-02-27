@@ -529,7 +529,28 @@
         }
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // This dynamically calculates your red navbar height
+                    const navHeight = document.querySelector('.custom-nav').offsetHeight;
+                    // we subtract navHeight + 20px extra for a clean margin
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
+
     
 </body>
     <!-- Website design inspired by: https://cao1224.github.io/ucsd_capstone_project/ -->
