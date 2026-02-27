@@ -3,26 +3,39 @@ body {
     color: #000000 !important; /* keep body text black */
 }
 
+/* this makes the anchor land a bit before the section starts */
+section, h2 {
+    scroll-margin-top: 100px; 
+}
+
 /* NAVIGATION BAR STYLING */
-.custom-navbar {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid #e0e0e0;
+.custom-nav {
+    background: rgba(244, 247, 242, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #8ba888;
+    padding: 0.5rem 0;
+}
+
+.hero-section {
+    padding: 2rem 0 1.5rem 0; /* Significantly less vertical space */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-section h1 {
+    font-size: 1.75rem; /* Smaller title */
+    color: #1a2e1a; /* Deep forest green-black */
 }
 
 .nav-link {
-    color: #333 !important;
+    font-size: 0.9rem;
+    color: #2d422d !important;
     font-weight: 500;
-    transition: color 0.3s;
 }
 
 .nav-link:hover {
     color: #007bff !important;
 }
 
-h2 {
-    scroll-margin-top: 90px; /* ensures navbar doesn't cover titles when clicking links */
-}
 
 /* Headers: black and bold */
 h1, h2, h4, .Intro {
