@@ -173,141 +173,159 @@
 
         </section>
 
+        
+
         <section id="eda" class="container my-5 reveal">
-            <h2 class="text-center mb-5">Exploratory Data Analysis</h2>
-            <h4 class="text-center mb-4">Datasets</h4>
-            <div class="row g-4">
-            <div class="row justify-content-center g-4">
-                <div class="col-md-4">
+            <h2 class="text-center mb-2">Exploratory Data Analysis</h2>
+            <p class="text-center text-muted mb-5" style="max-width:600px;margin:auto;">
+                We begin by characterising the two source datasets and verifying that
+                their embedding spaces are compatible before any training occurs.
+            </p>
+        
+            <h4 class="mb-4">Datasets</h4>
+            <div class="row justify-content-center g-4 mb-5">
+                <div class="col-md-5">
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <div class="fs-1">🌳</div>
-                            <h5 class="card-title mt-3">iNaturalist 2021 Dataset</h5>
-                            <p class="card-text">Large, messy dataset with relevant points mixed with irrelevant data.</p>
+                            <h5 class="card-title mt-3">iNaturalist 2021</h5>
+                            <p class="card-text text-muted">
+                                Large, naturalistic dataset containing a broad mix of species observations —
+                                including many irrelevant to our target task.
+                                Serves as the <strong>noisy training pool</strong>.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <div class="fs-1">🐛</div>
-                                <h5 class="card-title mt-3">Insect Images Dataset</h5>
-                                <p class="card-text">Smaller, high-quality validation set of data we want our model to learn.</p>
-                            </div>
+                <div class="col-md-5">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="fs-1">🐛</div>
+                            <h5 class="card-title mt-3">Insect Images Dataset</h5>
+                            <p class="card-text text-muted">
+                                Smaller, curated collection of high-quality insect photographs
+                                covering the target bug categories.
+                                Serves as the <strong>clean validation reference</strong>.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-     
-            
-            
-            <h4 class="mb-4 text-center">Class Overlap and Embedding Distribution Analysis</h4>
-
+        
+            <h4 class="mb-4">Class Overlap &amp; Embedding Distribution Analysis</h4>
             <div id="edaCanvas" class="card p-4">
                 <div class="row">
-
-                    <!-- Left Box: Description -->
                     <div class="col-md-6">
-                        <!-- Class Overlap -->
-                        <div id="ClassOverlap" class="description-box d-none">
-                            <h4 class="text-start">Class Overlap</h4>
-                            <p>info</p>
+                        <div id="ClassOverlap" class="description-box">
+                            <h6 class="fw-bold">Class Overlap</h6>
+                            <p class="text-muted" style="font-size:.9rem;">
+                                Species from iNaturalist were mapped to the broader insect
+                                categories in the Insect Images Dataset to assess coverage and identify gaps.
+                            </p>
                         </div>
-                        
-                        <!-- Embedding Distribution -->
-                        <div id="EmbedDist" class="description-box">
-                            <h4 class="text-start">Embedding Distribution</h4>
-                            <p>Info</p>
+                        <div id="EmbedDist" class="description-box mt-3">
+                            <h6 class="fw-bold">Embedding Distribution</h6>
+                            <p class="text-muted" style="font-size:.9rem;">
+                                CLIP-ViT-L-14 embeddings from both datasets were projected to
+                                a shared space. Overlapping distributions confirm that
+                                the validation signal is transferable to the training pool.
+                            </p>
                         </div>
-                        
-                        <!-- potentially more plots -->
-
- 
-
                     </div>
-
-                    <!-- Right Box: Visualization -->
                     <div class="col-md-6">
-                        <!-- Rearrest Outcomes Visualization -->
                         <div id="rearrestOutcomesViz" class="visualization-box">
                             <canvas id="rearrestChart"></canvas>
                         </div>
-
-                        <!-- Race Visualization -->
-                        <div id="raceViz" class="visualization-box d-none">
-                            <canvas id="raceChart"></canvas>
-                        </div>
-
-                        <!-- Ethnicity Visualization -->
-                        <div id="ethnicityViz" class="visualization-box d-none">
-                            <canvas id="ethnicityChart"></canvas>
-                        </div>
-
-                        <!-- Gender Visualization -->
-                        <div id="genderViz" class="visualization-box d-none">
-                            <canvas id="genderChart"></canvas>
-                        </div>
-
-                        <!-- Case Distribution Visualization -->
-                        <div class="map-legend-container">
-                            <div id="caseDistribution" class="chart-container d-none">
-                                <svg id="countyMap"></svg>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Prior History Impact Visualization -->
-                        <div id="priorHistoryImpact" class="visualization-box d-none">
-                            <canvas id="priorOffenseChart"></canvas>
-                        </div>
                     </div>
-                </div>
-
-                <!-- Navigation Buttons -->
-                <div class="d-flex justify-content-between mt-4">
-                    <button id="prevBtn" class="btn btn-secondary" disabled>Previous</button>
-                    <button id="nextBtn" class="btn btn-primary">Next</button>
                 </div>
             </div>
         </section>
-
+        
 
         <section id="preprocessing" class="container my-5 reveal">
-            <h2>Data Preprocessing</h2>
-
-            <h4>Label Mapping</h4>
-            <p>Insect species from the iNaturalist Dataset must be mapped to the broader bug categories in the Insect Image Dataset to standardize labeling.</p>
-
-            <h4>Clean Data Sampling</h4>
-            <p>We take a stratefied random sample of the clean dataset to use as the validation set, reserving the rest to use as the test set in our downstream ML task assessment.</p>
-            
-            <h4>Embedding Generation</h4>
-            <p>KAIROS ingests image data as embeddings so we use CLIP-ViT-L-14, a Contrastive Language-Image Pre-training (CLIP), to generate the embeddings for both the validation set and the training set.</p>
-
-            
-
-
-        </section>
-
-        <section id="valuation-curation" class="container my-5 reveal">
-            <h2>Data Valuation and Curation</h2>
-
-            <h4>KAIROS Background</h4>
-            <p>KAIROS (Zhu et al. 2025) is a model-agnostic data valuation method designed to overcome LAVA's limitations. It employs a closed form solution with Maximum Mean Discrepancy (MMD) instead of the Sinkhorn-regularized Wasserstein distance, resulting in more precise data value detection, high quality approximation of true LOO rankings, and significantly higher computational efficiency.  KAIROS calculates a net influence score using the directional derivative of the MMD, incorporating training and validation kernel averages alongside a conditional residual. Because MMD naturally supports conditional kernels, KAIROS can incorporate label similarity (e.g., via an indicator kernel) alongside feature-space kernels. This allows detection of both feature noise and label noise. KAIROS additionally satisfies the symmetry and density-separation axioms, allowing reproducible rankings for equivalent points and separation between low- and high-quality samples. The framework offers both offline and online algorithms. KAIROS provides a highly accurate approximation of LOO valuations with O(1/N^2) error. Furthermore, it demonstrates greater versatility in detecting both feature and label noise, effectively identifies high-value data (not just low-value points), and achieves up to a 50 times faster runtime than its competition, LAVA, in online deployment scenarios.</p>
-
-            <h4>KAIROS Adaptation & Application</h4>
-            <p>
-                We select the top 4000 images based on the valuation given by KAIROS to be our curated dataset.
+            <h2 class="text-center mb-2">Data Preprocessing &amp; Curation</h2>
+            <p class="text-center text-muted mb-5" style="max-width:640px;margin:auto;">
+                Raw iNaturalist data is noisy and heterogeneous. The pipeline below
+                standardises labels, generates embeddings, and uses the
+                <strong>KAIROS</strong> data-valuation framework to surface the
+                highest-quality training samples.
             </p>
-
-            <h4>KAIROS Results</h4>
-            <p>
-                [insert noisy vs clean histogram overlap plots, metrics F1 etc]
-            </p>
-
+        
+            <h4 class="mb-4">Pipeline</h4>
+            <div class="card border-0 shadow-sm p-3 mb-5 text-center">
+                <img 
+                    src="site_assets/CurationFramework.png" 
+                    alt="Curation Framework Pipeline Diagram"
+                    class="img-fluid mx-auto d-block rounded-3"
+                    style="max-width:90%;"
+                >
+            </div>
+        
+            <!-- KAIROS Background -->
+            <h4 class="mb-4">KAIROS: Data Valuation</h4>
+        
+            <div class="card border-0 shadow-sm bg-dark text-white p-4 mb-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                        <h5 class="mb-1">Key Properties</h5>
+                        <p class="small text-secondary mb-0">What makes KAIROS effective:</p>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="d-flex justify-content-around flex-wrap gap-2">
+                            <span class="badge bg-light text-dark p-2 px-3">Closed-form MMD</span>
+                            <span class="badge bg-light text-dark p-2 px-3">O(1/N²) LOO error</span>
+                            <span class="badge bg-light text-dark p-2 px-3">Feature &amp; label noise detection</span>
+                            <span class="badge bg-light text-dark p-2 px-3">Up to 50× faster than LAVA</span>
+                            <span class="badge bg-light text-dark p-2 px-3">Symmetry &amp; density-separation axioms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- KAIROS explanation cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Background</h5>
+                            <p class="small mb-2">
+                                KAIROS <span class="text-muted">(Zhu et al. 2025)</span> is a model-agnostic
+                                data-valuation method that replaces LAVA's Sinkhorn-regularised Wasserstein distance
+                                with a closed-form <strong>Maximum Mean Discrepancy (MMD)</strong> solution,
+                                yielding sharper value detection and up to <strong>50× faster</strong> runtime.
+                            </p>
+                            <p class="small mb-0">
+                                Each sample receives a <em>net influence score</em> derived from the directional
+                                derivative of the MMD. Because MMD supports conditional kernels natively, KAIROS
+                                detects both <strong>feature noise</strong> and <strong>label noise</strong>
+                                simultaneously, with LOO approximation error bounded at O(1/N²).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Application</h5>
+                            <p class="small mb-3">
+                                CLIP-ViT-L-14 embeddings from the full iNaturalist training pool are scored
+                                against the clean validation embeddings. The <strong>top 4,000 images</strong>
+                                by KAIROS value score are selected as the curated training set, discarding noisy,
+                                off-distribution, or mislabelled samples.
+                            </p>
+                            <h5 class="fw-bold">Results</h5>
+                            <img 
+                                src="site_assets/KairosResults.png" 
+                                alt="KAIROS Results: noisy vs. clean score distributions and evaluation metrics"
+                                class="img-fluid rounded-3 mt-1"
+                                style="width:100%;"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+       
 
         <section id="finetuning" class="container my-5 reveal">
             <h2 class="mb-4 text-center">Downstream Model Fine-Tuning</h2>
@@ -571,7 +589,6 @@
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    // This dynamically calculates your red navbar height
                     const navHeight = document.querySelector('.custom-nav').offsetHeight;
                     // we subtract navHeight + 20px extra for a clean margin
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
