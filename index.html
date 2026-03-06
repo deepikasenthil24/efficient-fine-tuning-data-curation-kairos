@@ -765,14 +765,28 @@
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
 
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                const toggler = document.querySelector('.navbar-toggler');
-                
-                // Only trigger if the menu is actually expanded (visible)
-                if (navbarCollapse.classList.contains('show')) {
-                    toggler.click();
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navHeight = document.querySelector('.custom-nav').offsetHeight;
+                    // Subtract navHeight + 20px extra for a clean margin
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // FORCE CLOSE the menu on iPad/Mobile
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    const toggler = document.querySelector('.navbar-toggler');
+                    if (navbarCollapse.classList.contains('show')) {
+                        toggler.click();
+                    }
                 }
             });
         });
