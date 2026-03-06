@@ -1,3 +1,55 @@
+
+
+body {
+    padding-top: 50px !important;
+    background-color: #f1f5f1 !important;
+    color: #1a2e1a !important; 
+}
+
+.section-alt {
+    background-color: #e3ebe3 !important;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    box-shadow: inset 0 10px 20px -10px rgba(0,0,0,0.02), 
+                inset 0 -10px 20px -10px rgba(0,0,0,0.02);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 3px;
+    width: 40px;
+    background-color: #d63384; 
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 16px !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(5px); /* Frosty glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08) !important;
+}
+#introduction, #eda, #preprocessing, #finetuning, #results, #conclusion {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+
+
+
+
+
+
 body {
     padding-top: 50px !important;
     background-color: #f7faf7 !important; 
@@ -397,12 +449,7 @@ section.reveal {
   transform: scale(1.1);
 }
 
-/* apply this to every second section*/
-.section-alt {
-    background-color: #f8f9fa; 
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+
 section {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -417,13 +464,3 @@ section {
     letter-spacing: 1px;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 60px;
-    background-color: #d63384;
-    border-radius: 2px;
-}
