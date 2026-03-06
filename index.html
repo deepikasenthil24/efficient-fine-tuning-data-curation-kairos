@@ -512,39 +512,37 @@
                         </div>
                     </div>
                 </div>
-        
-                <div class="card border-0 shadow-sm mb-5 bg-light">
-                    <div class="card-body p-4">
-                        <div class="badge bg-info text-dark mb-3">Experiment 3</div>
-                        <h5 class="fw-bold">KAIROS Results across Data Sizes</h5>
+    
 
-                        <div class="row g-4">
-                            <div class="col-lg-7">
-                                <p class="small text-muted mb-4">
-                                    To look under the hood of the KAIROS rankings, we sub-sampled the curated pool ($N=2,347$) from the <strong>Top 10% to 100%</strong>. This tested the continuous quality of our valuation function.
-                                </p>
-                                
-                
-                                <div class="mt-4 text-center">
-                                    <img src="site_assets/combined_metrics_chart.png" alt="Scaling Analysis of KAIROS Metrics" class="img-fluid rounded shadow-sm border">
-                                    <p class="small text-muted mt-2 italic">Figure: Combined metrics showing the performance plateaus across curation thresholds.</p>
-                                </div>
-                            </div>
-                
-                            <div class="col-lg-5">
-                                <div class="p-4 bg-white rounded border border-info h-100" style="background-color: #e7f3ff;">
-                                    <h6 class="fw-bold text-info"><i class="bi bi-search me-2"></i>Technical Insight</h6>
-                                    <p class="small mb-3">
-                                        This internal audit reveals a significant <strong>Efficiency Gap.</strong> The top 20% of KAIROS-ranked images provide nearly 98% of the maximum available performance.
-                                    </p>
-                                    <p class="small mb-3">
-                                        As seen in the plot to the right, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
-                                    </p>
-                                    <p class="small mb-0">
-                                        <strong>KAIROS successfully prioritizes prototypical, high-contrast samples that provide the cleanest class separation for the ResNet-50 backbone.
-                                    </p>
-                                </div>
-                            </div>
+        <section class="card border-0 shadow-sm mb-5 bg-light">
+            <div class="card-body p-4">
+                <div class="badge bg-info text-dark mb-3">Experiment 3</div>
+                <h5 class="fw-bold">KAIROS Results across Data Sizes</h5>
+        
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <p class="small text-muted mb-4">
+                            To look under the hood of the KAIROS rankings, we sub-sampled the curated pool ($N=2,347$) from the <strong>Top 10% to 100%</strong>. This tested the continuous quality of our valuation function.
+                        </p>
+                        
+                        <div class="mt-4 text-center">
+                            <img src="site_assets/combined_metrics_chart.png" alt="Scaling Analysis of KAIROS Metrics" class="img-fluid rounded shadow-sm border">
+                            <p class="small text-muted mt-2 italic">Figure: Combined metrics showing the performance plateaus across curation thresholds.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-5">
+                        <div class="p-4 rounded border border-info mt-lg-4" style="background-color: #e7f3ff;">
+                            <h6 class="fw-bold text-info"><i class="bi bi-search me-2"></i>Technical Insight</h6>
+                            <p class="small mb-3">
+                                This internal audit reveals a significant <strong>Efficiency Gap.</strong> The top 20% of KAIROS-ranked images provide nearly 98% of the maximum available performance.
+                            </p>
+                            <p class="small mb-3">
+                                As seen in the plot to the left, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
+                            </p>
+                            <p class="small mb-0">
+                                <strong>KAIROS successfully prioritizes prototypical, high-contrast samples that provide the cleanest class separation for the ResNet-50 backbone.</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
