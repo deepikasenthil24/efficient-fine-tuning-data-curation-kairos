@@ -407,8 +407,8 @@
             <div class="container">
                 <h2 class="fw-bold mb-4">Experimental Results</h2>
                 <p class="text-muted mb-5">
-                    We conducted three primary sets of experiments to evaluate the utility of KAIROS-curated subsets in training a robust insect image classifier[cite: 450]. 
-                    All metrics are reported as the <strong>Mean ± Standard Deviation</strong> across 3 independent trials[cite: 474].
+                    We conducted three primary sets of experiments to evaluate the utility of KAIROS-curated subsets in training our robust insect image classifier. 
+                    All metrics are reported as the <strong>Mean ± Standard Deviation</strong> across 3 independent trials.
                 </p>
         
                 <div class="row g-4">
@@ -434,7 +434,7 @@
                                 </div>
                             </div>
                             <p class="small text-muted mb-0">
-                                <strong>Insight:</strong> The curated subset achieved 99.4% performance parity with the full set while using 93% less training time[cite: 481, 482].
+                                <strong>Insight:</strong> The curated subset achieved 99.4% performance parity with the full set while using 93% less training time.
                             </p>
                         </div>
                     </div>
@@ -444,7 +444,7 @@
                             <div class="badge bg-warning text-dark mb-3 align-self-start">Experiment 2</div>
                             <h5 class="fw-bold">Robustness to Noise</h5>
                             <p class="small text-muted mb-4">
-                                Introduced Gaussian noise to the training pool to evaluate the pipeline's ability to filter corrupted data[cite: 462, 566].
+                                Introduced Gaussian noise to the training pool to evaluate the pipeline's ability to filter corrupted data.
                             </p>
                             <div class="bg-light p-3 rounded mb-3">
                                 <div class="d-flex justify-content-between mb-1">
@@ -461,7 +461,7 @@
                                 </div>
                             </div>
                             <p class="small text-muted mb-0">
-                                <strong>Insight:</strong> KAIROS correctly prioritized the "cleanest" remaining samples, maintaining accuracy even in corrupted environments[cite: 221, 570].
+                                <strong>Insight:</strong> KAIROS correctly prioritized the "cleanest" remaining samples, maintaining accuracy even in corrupted environments.
                             </p>
                         </div>
                     </div>
@@ -480,6 +480,133 @@
                             <p class="small text-muted mb-0">
                                 <strong>Insight:</strong> We identified that using only the top 6% of ranked samples provided the best balance between efficiency and classification power[cite: 249].
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="py-5 bg-white">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center">Experimental Results</h2>
+                <p class="text-center text-muted mb-5">All metrics reported as <strong>Mean ± Standard Deviation</strong> across 3 independent trials[cite: 464, 474].</p>
+        
+                <div class="card border-0 shadow-sm mb-5 bg-light">
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary mb-2">Experiment 1</div>
+                        <h5 class="fw-bold">Original Data Comparison</h5>
+                        <p class="small text-muted mb-4">Comparing KAIROS-curated Top 6% (N=2,347) against the Full iNaturalist (N=36,355) and Random subsets[cite: 461, 477].</p>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover small bg-white border">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Config</th>
+                                        <th>Method</th>
+                                        <th>Accuracy</th>
+                                        <th>F1 Score</th>
+                                        <th>AUC</th>
+                                        <th>Train Time (s)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-success">
+                                        <td><strong>Curated</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.779 ± 0.014</td>
+                                        <td>0.763 ± 0.016</td>
+                                        <td>0.967 ± 0.001</td>
+                                        <td>159.31 ± 0.16</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Full</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.685 ± 0.021</td>
+                                        <td>0.757 ± 0.017</td>
+                                        <td>0.978 ± 0.002</td>
+                                        <td>2505.33 ± 40.90</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Random</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.422 ± 0.043</td>
+                                        <td>0.446 ± 0.057</td>
+                                        <td>0.920 ± 0.012</td>
+                                        <td>163.19 ± 2.40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card border-0 shadow-sm mb-5 bg-light">
+                    <div class="card-body p-4">
+                        <div class="badge bg-warning text-dark mb-2">Experiment 2</div>
+                        <h5 class="fw-bold">Robustness to Noise</h5>
+                        <p class="small text-muted mb-4">Evaluating performance when Gaussian noise is introduced to the training pool[cite: 462, 566].</p>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover small bg-white border">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Config</th>
+                                        <th>Method</th>
+                                        <th>Accuracy</th>
+                                        <th>F1 Score</th>
+                                        <th>AUC</th>
+                                        <th>Train Time (s)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-warning">
+                                        <td><strong>Curated</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.823 ± 0.019</td>
+                                        <td>0.817 ± 0.019</td>
+                                        <td>0.978 ± 0.005</td>
+                                        <td>186.28 ± 1.47</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Full</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.835 ± 0.009</td>
+                                        <td>0.831 ± 0.011</td>
+                                        <td>0.983 ± 0.001</td>
+                                        <td>389.29 ± 18.54</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Random</strong></td>
+                                        <td>LoRA</td>
+                                        <td>0.799 ± 0.020</td>
+                                        <td>0.792 ± 0.021</td>
+                                        <td>0.972 ± 0.003</td>
+                                        <td>202.82 ± 1.58</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card border-0 shadow-sm bg-light">
+                    <div class="card-body p-4">
+                        <div class="badge bg-info text-dark mb-2">Experiment 3</div>
+                        <h5 class="fw-bold">Curation Scaling Analysis</h5>
+                        <p class="small text-muted mb-4">Identifying the "Utility Peak" by varying curation thresholds from 5% to 100%[cite: 463, 213].</p>
+                        <div class="row text-center">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white rounded border">
+                                    <h3 class="fw-bold text-info mb-0">Top 6%</h3>
+                                    <p class="small text-muted mb-0">Optimal data threshold for maximal efficiency and generalization[cite: 176, 249].</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white rounded border">
+                                    <h3 class="fw-bold text-success mb-0">93.7%</h3>
+                                    <p class="small text-muted mb-0">Reduction in training time compared to the full dataset[cite: 177, 249].</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
