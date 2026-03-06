@@ -396,3 +396,34 @@ section.reveal {
 #btn-back-to-top:hover {
   transform: scale(1.1);
 }
+
+/* apply this to every second section*/
+.section-alt {
+    background-color: #f8f9fa; 
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    background-color: #d63384;
+    border-radius: 2px;
+}
