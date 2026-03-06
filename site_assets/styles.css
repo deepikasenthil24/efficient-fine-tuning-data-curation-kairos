@@ -1,9 +1,13 @@
 
 
-body {
-    padding-top: 50px !important;
-    background-color: #f1f5f1 !important;
-    color: #1a2e1a !important; 
+section {
+    padding-top: 40px !important;    /* Reduced from 100px */
+    padding-bottom: 40px !important; /* Reduced from 100px */
+}
+
+#introduction, #eda, #preprocessing, #finetuning, #results, #conclusion {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 }
 
 .section-alt {
@@ -14,16 +18,20 @@ body {
                 inset 0 -10px 20px -10px rgba(0,0,0,0.02);
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    height: 3px;
-    width: 40px;
-    background-color: #d63384; 
-    border-radius: 10px;
+.section-title {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px !important; 
+    padding-bottom: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #d63384; 
+}
+
+h2 {
+    text-align: center !important;
+    width: 100%;
 }
 
 .card {
@@ -39,11 +47,6 @@ body {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08) !important;
 }
-#introduction, #eda, #preprocessing, #finetuning, #results, #conclusion {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-}
-
 
 
 
