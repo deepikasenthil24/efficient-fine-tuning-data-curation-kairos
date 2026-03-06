@@ -765,31 +765,29 @@
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    const navHeight = document.querySelector('.custom-nav').offsetHeight;
-                    // Subtract navHeight + 20px extra for a clean margin
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-
-                    // FORCE CLOSE the menu on iPad/Mobile
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    const toggler = document.querySelector('.navbar-toggler');
-                    if (navbarCollapse.classList.contains('show')) {
-                        toggler.click();
-                    }
-                }
-            });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 1. Handle the Scroll
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navHeight = document.querySelector('.custom-nav').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+    
+            // 2. Force Close the Navbar
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const toggler = document.querySelector('.navbar-toggler');
+            
+            // This checks if the menu is currently 'shown' (expanded)
+            if (navbarCollapse.classList.contains('show')) {
+                toggler.click(); // Mimics clicking the 'hamburger' button to close it
+            }
         });
+    });
 
     </script>
 
