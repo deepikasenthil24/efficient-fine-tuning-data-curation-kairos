@@ -306,7 +306,6 @@ section.reveal {
         border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    /* clean up last link border */
     .navbar-nav .nav-item:last-child {
         border-bottom: none;
     }
@@ -314,4 +313,50 @@ section.reveal {
 
 #conclusion {
     scroll-margin-top: 120px !important;
+}
+
+
+.cite-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8d7da; 
+    color: #d63384;          
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 0 2px;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(214, 51, 132, 0.2);
+}
+
+.cite-tag:hover {
+    background-color: #d63384;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.citation-item {
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    border-left: 3px solid transparent;
+}
+
+
+.citation-item:target {
+    background-color: #ffffff !important;
+    border-left: 3px solid #d63384;
+    box-shadow: 0 4px 12px rgba(214, 51, 132, 0.15);
+    animation: highlight-pulse 2s ease-out;
+}
+
+@keyframes highlight-pulse {
+    0% { background-color: #ffeef2; }
+    100% { background-color: #ffffff; }
 }
