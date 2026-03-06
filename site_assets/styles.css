@@ -292,18 +292,22 @@ section.reveal {
 @media (max-width: 991px) {
     .navbar-collapse {
         background-color: #ffa4a4;
-        border-top: 1px solid rgba(0,0,0,0.1);
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 0 0 10px 10px;
-    }
-    
-    .navbar-nav {
-        text-align: center;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 1rem;
+        
+        max-height: 60vh; 
+        overflow-y: auto; 
     }
 
-    .nav-item {
+    .navbar-nav .nav-item {
+        text-align: center;
         padding: 10px 0;
         border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Clean up the last link border */
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
     }
 }
