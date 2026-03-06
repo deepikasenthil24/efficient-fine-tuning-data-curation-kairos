@@ -610,33 +610,32 @@
                 </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-2 g-3">
-                <div class="col">
-                    <div class="info-box h-100">
-                        <h6 class="fw-bold"><span class="badge bg-success me-2">Efficiency</span></h6>
-                        <p class="small mb-0"><strong>Maximizing Efficiency:</strong> Data valuation identifies high-value images that allow models to learn faster than random sampling.</p>
-                    </div>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 text-center text-md-start">Project Takeaways</h5>
+                
+                <div class="info-box mb-3">
+                    <p class="small mb-0"><strong>Maximizing Efficiency:</strong> Data valuation identifies high-value images that allow models to learn faster than random sampling.</p>
                 </div>
-                <div class="col">
-                    <div class="info-box h-100">
-                        <h6 class="fw-bold"><span class="badge bg-primary me-2">Scalability</span></h6>
-                        <p class="small mb-0"><strong>Scalable Framework:</strong> Our end-to-end pipeline is ready to refine noisy datasets into high-quality training data.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="info-box h-100 border-start-warning">
-                        <h6 class="fw-bold text-dark">Scope Boundaries</h6>
-                        <p class="x-small mb-1">Focused on <strong>Data Valuation</strong> for supervised fine-tuning.</p>
-                        <p class="x-small text-muted mb-0"><em>Out of scope: Architecture optimization, pre-training, fusion.</em></p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="info-box h-100 border-start-danger">
-                        <h6 class="fw-bold text-dark">Known Limitations</h6>
-                        <p class="x-small mb-0">KAIROS assumes a "gold standard" validation set; any inherent bias there will propagate through the curation process.</p>
-                    </div>
+                
+                <div class="info-box">
+                    <p class="small mb-0"><strong>Scalable Framework:</strong> Our end-to-end pipeline is ready to refine noisy datasets into high-quality training data for image classification tasks.</p>
                 </div>
             </div>
+        
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 text-center text-md-start">Scope & Limitations</h5>
+                
+                <div class="info-box mb-3 border-start-pink">
+                    <p class="small mb-1"><strong>Scope Boundaries:</strong> Focused on Data Valuation for supervised fine-tuning.</p>
+                    <p class="x-small text-muted mb-0"><em>Out of scope: Architecture optimization, self-supervised pre-training, and multi-modal fusion.</em></p>
+                </div>
+                
+                <div class="info-box border-start-pink">
+                    <p class="small mb-0"><strong>Known Limitations:</strong> KAIROS assumes the validation set is gold standard. Biased validation sets will propagate bias into the training pool.</p>
+                </div>
+            </div>
+        </div>
 
         </section>
 
