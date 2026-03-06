@@ -511,20 +511,63 @@
                     </div>
                 </div>
         
-                <div class="card border-0 shadow-sm bg-light">
+                <div class="card border-0 shadow-sm mb-5 bg-light">
                     <div class="card-body p-4">
-                        <div class="badge bg-info text-dark mb-3">Experiment 3: Curation Scaling Analysis</div>
-                        <div class="row align-items-center">
-                            <div class="col-md-7">
-                                <p class="small text-muted">We tested thresholds from 5% to 100% of the ranked dataset to identify the point of diminishing returns.</p>
-                                <div class="alert alert-secondary border-0 py-2">
-                                    <strong>Technical Insight:</strong> We identified a <strong>"Utility Peak" at 6%</strong>. Beyond this threshold, adding more unranked data increased compute costs linearly while causing performance to plateau, proving that "more data" can often be counterproductive.
+                        <div class="badge bg-info text-dark mb-3">Experiment 3: KAIROS Data Valuation Audit</div>
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <p class="small text-muted mb-4">
+                                    To look "under the hood" of the KAIROS rankings, we conducted an internal audit by sub-sampling the curated pool ($N=2,347$) from the <strong>Top 5% to 100%</strong>. This tested the continuous quality of our valuation function.
+                                </p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-hover bg-white border small">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Curated Threshold</th>
+                                                <th>Accuracy</th>
+                                                <th>F1 Score</th>
+                                                <th>AUC</th>
+                                                <th>Mean Time (s)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Top 20%</td>
+                                                <td>0.762 ± 0.012</td>
+                                                <td>0.751 ± 0.015</td>
+                                                <td>0.961 ± 0.002</td>
+                                                <td><strong>31.86 ± 0.05</strong></td>
+                                            </tr>
+                                            <tr class="table-info">
+                                                <td><strong>Top 100% (Full Curated)</strong></td>
+                                                <td><strong>0.779 ± 0.014</strong></td>
+                                                <td><strong>0.763 ± 0.016</strong></td>
+                                                <td><strong>0.967 ± 0.001</strong></td>
+                                                <td>159.31 ± 0.16</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                
+                                <div class="mt-4 text-center">
+                                    <img src="combined_metrics_chart.png" alt="Scaling Analysis of KAIROS Metrics" class="img-fluid rounded shadow-sm border">
+                                    <p class="small text-muted mt-2 italic">Figure: Combined metrics showing the "Utility Peak" and performance plateaus across curation thresholds.</p>
                                 </div>
                             </div>
-                            <div class="col-md-5 text-center">
-                                <div class="p-3 bg-white rounded border">
-                                    <h2 class="fw-bold text-info mb-0">Top 6%</h2>
-                                    <p class="small fw-bold text-uppercase text-muted">The Efficiency Sweet Spot</p>
+                
+                            <div class="col-lg-5">
+                                <div class="p-4 bg-white rounded border border-info h-100">
+                                    <h6 class="fw-bold text-info"><i class="bi bi-search me-2"></i>Technical Insight</h6>
+                                    <p class="small mb-3">
+                                        This internal audit reveals a significant <strong>"Efficiency Gap."</strong> The top 20% of KAIROS-ranked images provide nearly 98% of the maximum available performance.
+                                    </p>
+                                    <p class="small mb-3">
+                                        As seen in <code>combined_metrics_chart.png</code>, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
+                                    </p>
+                                    <p class="small mb-0">
+                                        <strong>The "Computer Vision Critic":</strong> KAIROS successfully prioritizes prototypical, high-contrast samples that provide the cleanest class separation for the ResNet-50 backbone.
+                                    </p>
                                 </div>
                             </div>
                         </div>
