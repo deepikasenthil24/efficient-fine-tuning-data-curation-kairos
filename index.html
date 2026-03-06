@@ -235,9 +235,17 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div id="rearrestOutcomesViz" class="visualization-box">
-                            <canvas id="rearrestChart"></canvas>
+                    <div class="col-md-7">
+                        <div class="visualization-box text-center">
+                            <img 
+                                src="site_assets/embedding_dist_iNat_val.png" 
+                                alt="Embedding Distribution Visualization" 
+                                class="img-fluid rounded-3 shadow-sm"
+                                style="max-height: 400px; width: auto;"
+                            >
+                            <p class="text-muted mt-2 x-small" style="font-size: 0.75rem;">
+                                <em>Figure: t-SNE projection of CLIP embeddings showing alignment between iNaturalist and Validation sets.</em>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -535,15 +543,22 @@
                     </div>
         
                     <div class="col-lg-5">
-                        <div class="p-4 rounded border mt-lg-4" style="background-color: #f3e5f5; border-color: #d1c4e9 !important;">
-                            <h6 class="fw-bold"><i class="bi bi-search me-2"></i>Technical Insight</h6>
-                            <p class="small mb-3">
+                        <div class="p-4 rounded border" style="background-color: #f3e5f5; border-color: #d1c4e9 !important;">
+                            <h6 class="fw-bold d-flex align-items-center mb-3" style="color: #6a1b9a;">
+                                <i class="bi bi-search me-2"></i>Technical Insight
+                            </h6>
+                            
+                            <p class="small mb-3 text-start">
                                 This internal audit reveals a significant efficiency Gap. The top 20% of KAIROS-ranked images provide nearly 98% of the maximum available performance.
                             </p>
-                            <p class="small mb-3">
+                            
+                            <p class="small mb-3 text-start">
                                 As seen in the plot to the left, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
                             </p>
-                            <p class="small mb-0">
+                    
+                            
+                            
+                            <p class="small mb-0 text-start">
                                 <strong>KAIROS successfully prioritizes prototypical, high-contrast samples that provide the cleanest class separation for the ResNet-50 backbone.</strong>
                             </p>
                         </div>
