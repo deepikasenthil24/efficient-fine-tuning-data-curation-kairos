@@ -278,3 +278,8 @@ h4 {
 #introduction, #eda, #preprocessing, #finetuning, #results, #conclusion {
     padding-top: 20px; /* Internal padding so text isn't touching the navbar */
 }
+
+section.reveal {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    scroll-margin-top: 110px; 
+}
