@@ -769,22 +769,26 @@
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // 1. Handle the Scroll
+            // 1. Calculate the landing position
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 const navHeight = document.querySelector('.custom-nav').offsetHeight;
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
     
-            // 2. Force Close the Navbar
+            // 2. Force the navbar to close (Critical for Mobile/iPad)
             const navbarCollapse = document.querySelector('.navbar-collapse');
             const toggler = document.querySelector('.navbar-toggler');
             
-            // This checks if the menu is currently 'shown' (expanded)
+            // Check if the bootstrap menu is currently expanded ('show' class)
             if (navbarCollapse.classList.contains('show')) {
-                toggler.click(); // Mimics clicking the 'hamburger' button to close it
+                toggler.click(); // This triggers the animation to minimize the menu
             }
         });
     });
