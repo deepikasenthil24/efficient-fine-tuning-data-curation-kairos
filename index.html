@@ -583,8 +583,10 @@
             </div>
         </section>
 
-        <section id="conclusion" class="container my-5 reveal">
-            <h2 class="mb-5">Conclusion & Impact</h2>
+
+
+        <section id="conclusion" class="container py-5 reveal">
+            <h2 class="mb-5 text-center">Conclusion & Impact</h2>
         
             <div class="row justify-content-center g-4">
                 <div class="col-md-6 col-lg-4"> 
@@ -595,7 +597,7 @@
                         <p class="small mb-0 px-2">KAIROS-curated subsets reached convergence in 159 seconds, compared to over 41 minutes for the full dataset.</p>
                     </div>
                 </div>
-    
+        
                 <div class="col-md-6 col-lg-4"> 
                     <div class="card border-0 shadow-sm text-center p-3 bg-white h-100" style="border-bottom: 4px solid #28a745 !important;">
                         <div class="display-5 fw-bold text-primary mb-1">99.4%</div>
@@ -605,9 +607,8 @@
                     </div>
                 </div>
             </div>
-
         
-            <div class="row g-4 mt-4">
+            <div class="row g-4 mt-5">
                 <div class="col-md-6 text-center text-md-start">
                     <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start">
                         <div class="bg-dark text-white rounded-circle p-3 mb-3 mb-md-0 me-md-3">
@@ -632,20 +633,19 @@
                     </div>
                 </div>
             </div>
-
-            <section class="container py-4">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5 class="fw-bold">Scope Boundaries</h5>
-                        <p class="small text-muted">Focused on <strong>Data Valuation</strong> for supervised fine-tuning. Out of scope: Architecture optimization, self-supervised pre-training, and multi-modal fusion.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 class="fw-bold">Known Limitations</h5>
-                        <p class="small text-muted">KAIROS assumes the validation set is gold standard. If the validation set contains bias, the curation will propagate that bias into the training pool.</p>
-                    </div>
+        
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-md-6">
+                    <h5 class="fw-bold">Scope Boundaries</h5>
+                    <p class="small text-muted">Focused on <strong>Data Valuation</strong> for supervised fine-tuning. Out of scope: Architecture optimization, self-supervised pre-training, and multi-modal fusion.</p>
                 </div>
-            </section>
+                <div class="col-md-6">
+                    <h5 class="fw-bold">Known Limitations</h5>
+                    <p class="small text-muted">KAIROS assumes the validation set is gold standard. If the validation set contains bias, the curation will propagate that bias into the training pool.</p>
+                </div>
+            </div>
         </section>
+       
 
 
     <footer class="py-3" style="background-color: #f5c9c9; color: #2d2d2d;">
