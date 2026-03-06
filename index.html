@@ -130,10 +130,12 @@
                 
             </p>
 
+
             <div class="row justify-content-center mb-5">
                 <div class="col-md-10">
-                    <div class="p-4 rounded-4 shadow-sm text-center" style="background-color: #fff9c4; border: 1px solid #fbc02d;">
-                        <p class="lead mb-0" style="color: #454545;">
+                    <div class="p-4 rounded-4 shadow-sm text-center" 
+                         style="background-color: #fffde7; border: 1px solid #f9f5d7;">
+                        <p class="lead mb-0" style="color: #4a4a4a; font-size: 1.15rem; line-height: 1.6;">
                             This project serves <strong>ML engineers working with limited compute</strong> who need to maximize model performance using minimal, high-quality data. 
                             While we demonstrate its power here through <strong>Image Classification on the iNaturalist 2021 dataset</strong>, our curation pipeline is a 
                             <strong>generalizable framework</strong> applicable to any high-dimensional noisy data.
@@ -219,40 +221,41 @@
             </div>
         
             <h4 class="mb-4">Class Overlap &amp; Embedding Distribution Analysis</h4>
-            <div id="edaCanvas" class="card p-4">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div id="ClassOverlap" class="description-box">
-                            <h6 class="fw-bold">Class Overlap</h6>
-                            <p class="text-muted" style="font-size:.9rem;">
-                                Species from iNaturalist were mapped to the broader insect
-                                categories in the Insect Images Dataset to assess coverage and identify gaps.
-                            </p>
+                <div id="edaCanvas" class="card p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <div id="ClassOverlap" class="description-box">
+                                <h6 class="fw-bold">Class Overlap</h6>
+                                <p class="text-muted" style="font-size:.9rem;">
+                                    Species from iNaturalist were mapped to the broader insect
+                                    categories in the Insect Images Dataset to assess coverage and identify gaps.
+                                </p>
+                            </div>
+                            <div id="EmbedDist" class="description-box mt-3">
+                                <h6 class="fw-bold">Embedding Distribution</h6>
+                                <p class="text-muted" style="font-size:.9rem;">
+                                    CLIP-ViT-L-14 embeddings from both datasets were projected to
+                                    a shared space. Overlapping distributions confirm that
+                                    the validation signal is transferable to the training pool.
+                                </p>
+                            </div>
                         </div>
-                        <div id="EmbedDist" class="description-box mt-3">
-                            <h6 class="fw-bold">Embedding Distribution</h6>
-                            <p class="text-muted" style="font-size:.9rem;">
-                                CLIP-ViT-L-14 embeddings from both datasets were projected to
-                                a shared space. Overlapping distributions confirm that
-                                the validation signal is transferable to the training pool.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="visualization-box text-center">
-                            <img 
-                                src="site_assets/embedding_dist_iNat_val.png" 
-                                alt="Embedding Distribution Visualization" 
-                                class="img-fluid rounded-3 shadow-sm"
-                                style="max-height: 400px; width: auto;"
-                            >
-                            <p class="text-muted mt-2 x-small" style="font-size: 0.75rem;">
-                                <em>Figure: t-SNE projection of CLIP embeddings showing alignment between iNaturalist and Validation sets.</em>
-                            </p>
+                
+                        <div class="col-md-7">
+                            <div class="visualization-box text-center">
+                                <img 
+                                    src="site_assets/embedding_dist_iNat_val.png" 
+                                    alt="Embedding Distribution Visualization" 
+                                    class="img-fluid rounded-3 shadow-sm"
+                                    style="max-height: 400px; width: auto;"
+                                >
+                                <p class="text-muted mt-2 x-small" style="font-size: 0.75rem;">
+                                    <em>Figure: t-SNE projection of CLIP embeddings showing alignment between iNaturalist and Validation sets.</em>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         
 
