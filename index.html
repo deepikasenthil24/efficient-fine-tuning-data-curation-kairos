@@ -782,32 +782,33 @@
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // 1. Calculate the landing position
+            // 1. Smooth Scroll Logic
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const navHeight = document.querySelector('.custom-nav').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = document.querySelector('.custom-nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
     
-            // 2. Force the navbar to close (Critical for Mobile/iPad)
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            const toggler = document.querySelector('.navbar-toggler');
+            // 2. Optimized Navbar Close Logic
+            const navContainer = document.getElementById('navbarNav');
+            // Use Bootstrap's built-in constructor to get the existing instance
+            const bsCollapse = bootstrap.Collapse.getInstance(navContainer);
             
-            // Check if the bootstrap menu is currently expanded ('show' class)
-            if (navbarCollapse.classList.contains('show')) {
-                toggler.click(); // This triggers the animation to minimize the menu
+            // Only call hide if the menu is actually open (shown)
+            if (navContainer.classList.contains('show') && bsCollapse) {
+                bsCollapse.hide();
             }
         });
     });
-
 
     let mybutton = document.getElementById("btn-back-to-top");
 
