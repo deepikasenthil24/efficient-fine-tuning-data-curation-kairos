@@ -7,6 +7,19 @@
     }
 }
 
+@media (max-width: 768px) {
+  .nav-menu {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Slightly smoother for desktop */
+@media (min-width: 769px) {
+  .nav-menu {
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
 section {
     padding-top: 40px !important;    /* Reduced from 100px */
     padding-bottom: 40px !important; /* Reduced from 100px */
