@@ -816,6 +816,13 @@
             });
         });
 
+    const navMenu = document.querySelector('.nav-menu');
+    const kairosLink = document.querySelector('#kairos-link');
+    
+    kairosLink.addEventListener('click', () => {
+      navMenu.classList.remove('active'); // Or whatever class handles your 'open' state
+    });
+
     let mybutton = document.getElementById("btn-back-to-top");
 
     window.onscroll = function () {
