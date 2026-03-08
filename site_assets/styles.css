@@ -1,4 +1,11 @@
 
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        max-height: 85vh;
+        overflow-y: auto;
+        background-color: #ffa4a4;
+    }
+}
 
 section {
     padding-top: 40px !important;    /* Reduced from 100px */
