@@ -325,20 +325,20 @@
                                 detects both <strong>feature noise</strong> and <strong>label noise</strong>
                                 simultaneously, with LOO approximation error bounded at O(1/N²).
                             </p>
-                            <figure class="mt-2">
-                                    <img 
-                                        src="site_assets/mmd_explanation.png" 
-                                        alt="MMD Distribution Mapping Diagram" 
-                                        class="img-fluid rounded-3" 
-                                        style="width:100%;"
-                                    >
-                                    <figcaption class="small text-muted mt-2 italic">
-                                        The image illustrates how the MMD)
-                                        measures the distance between two probability distributions, $P$ and $Q$, 
-                                        by embedding them as points into a Reproducing Kernel Hilbert Space (RKHS) 
-                                        and calculating the Euclidean distance between those embeddings.
-                                    </figcaption>
-                                </figure>
+                            <div class="mt-4 d-flex justify-content-center">
+                                    <figure class="w-75"> <img 
+                                            src="site_assets/mmd_explanation.png" 
+                                            alt="Diagram showing probability distributions P and Q being mapped to an RKHS to calculate MMD distance." 
+                                            class="img-fluid rounded-3" 
+                                        >
+                                        <figcaption class="small text-muted mt-2">
+                                            The image illustrates how the <strong>MMD</strong> 
+                                            measures the distance between two probability distributions, P and Q, 
+                                            by embedding them as points into a <strong>Reproducing Kernel Hilbert Space (RKHS)</strong> 
+                                            and calculating the Euclidean distance between those embeddings.
+                                        </figcaption>
+                                    </figure>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -563,7 +563,7 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-7 text-center">
                         <p class="small text-muted text-start mb-4">
-                            To look under the hood of the KAIROS rankings, we sub-sampled the curated pool ($N=2,347$) from the <strong>Top 10% to 100%</strong>. This tested the continuous quality of our valuation function.
+                            To look under the hood of the KAIROS rankings, we sub-sampled the curated pool (N=2,347) from the <strong>Top 10% to 100%</strong>. This tested the continuous quality of our valuation function.
                         </p>
                         
                         <div class="mt-4">
