@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="site_assets/styles.css" /> 
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body id="top" body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg fixed-top custom-nav">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🐞 KAIROS Curation</a>
+            <a class="navbar-brand fw-bold" href="#top">🐞 KAIROS Curation</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -780,35 +780,41 @@
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            // 1. Smooth Scroll Logic
-            const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const navHeight = document.querySelector('.custom-nav').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+        document.querySelectorAll('.nav-link, .navbar-brand').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
                     
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    if (targetElement) {
+                        const navHeight = document.querySelector('.custom-nav').offsetHeight;
+                        
+                        // Determine offset based on screen width
+                        // 992px is the standard Bootstrap 'lg' breakpoint
+                        const isMobile = window.innerWidth < 992;
+                        const mobileOffset = 10; // Land "less down" (closer to the top)
+                        const desktopOffset = 20; 
+                        
+                        const finalOffset = isMobile ? mobileOffset : desktopOffset;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navHeight + finalOffset);
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-            }
-    
-            // 2. Optimized Navbar Close Logic
-            const navContainer = document.getElementById('navbarNav');
-            // Use Bootstrap's built-in constructor to get the existing instance
-            const bsCollapse = bootstrap.Collapse.getInstance(navContainer);
-            
-            // Only call hide if the menu is actually open (shown)
-            if (navContainer.classList.contains('show') && bsCollapse) {
-                bsCollapse.hide();
-            }
+        
+                // Navbar Close Logic for Mobile
+                const navContainer = document.getElementById('navbarNav');
+                const bsCollapse = bootstrap.Collapse.getInstance(navContainer);
+                if (navContainer.classList.contains('show') && bsCollapse) {
+                    bsCollapse.hide();
+                }
+            });
         });
-    });
 
     let mybutton = document.getElementById("btn-back-to-top");
 
