@@ -9,17 +9,10 @@
 
 @media (max-width: 768px) {
   .nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* 100dvh is the magic fix for mobile browser bars */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100dvh; 
-    display: flex;
-    flex-direction: column;
-    /* Ensure it starts exactly at the top */
-    transform: translateY(0); 
   }
+}
 
 /* slightly smoother for desktop */
 @media (min-width: 769px) {
