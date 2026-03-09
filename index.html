@@ -398,6 +398,46 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h4 class="mb-5 fw-bold text-center">Iteration & Evolution</h4>
+                        
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <div class="p-4 bg-white border rounded-4 shadow-sm h-100">
+                                    <div class="badge bg-secondary mb-2">Phase 1</div>
+                                    <h6 class="fw-bold">Initial Approach</h6>
+                                    <p class="small text-muted mb-0">
+                                        We originally simulated data "messiness" by adding noise to CLIP embeddings. However, this tied our results to one specific encoder version, limiting the framework's flexibility.
+                                    </p>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-2 d-none d-md-flex align-items-center justify-content-center">
+                                <span class="fs-2 text-muted">→</span>
+                            </div>
+                            <div class="col-12 d-md-none text-center py-3">
+                                <span class="fs-2 text-muted">↓</span>
+                            </div>
+            
+                            <div class="col-md-5">
+                                <div class="p-4 bg-white border-start border-4 border-success rounded-4 shadow-sm h-100">
+                                    <div class="badge bg-success mb-2">The Pivot</div>
+                                    <h6 class="fw-bold">Model-Agnostic Corruption</h6>
+                                    <p class="small mb-0">
+                                        We shifted noise injection to the <strong>Image Pre-processing Stage</strong>. By corrupting raw pixels, we created a benchmark that reflects real-world artifacts like motion blur and sensor noise.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
         </section>
        
 
