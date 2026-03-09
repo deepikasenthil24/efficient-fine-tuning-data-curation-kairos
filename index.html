@@ -115,7 +115,7 @@
                     <div>
                         <h6 class="text-uppercase fw-bold mb-2 small" style="color: #0c5460;">Key Result</h6>
                         <div class="d-flex align-items-baseline gap-2">
-                            <span class="display-6 fw-bold" style="color: #0056b3;">93.7%</span>
+                            <span class="display-6 fw-bold" style="color: #0056b3;">93.6%</span>
                             <span class="h5 mb-0 text-dark">Efficiency Gain</span>
                         </div>
                         <p class="small mb-0 text-dark" style="opacity: 0.85;">
@@ -140,7 +140,7 @@
                          style="background-color: #fffde7; border: 1px solid #f9f5d7;">
                         <p class="lead mb-0" style="color: #4a4a4a; font-size: 1.15rem; line-height: 1.6;">
                             This project serves <strong>ML engineers working with limited compute</strong> who need to maximize model performance using minimal, high-quality data. 
-                            While we demonstrate its power here through <strong>Image Classification on the iNaturalist 2021 dataset</strong> <a href="#ref-3" class="cite-tag">[3]</a>, our curation pipeline is a 
+                            While we demonstrate its power here through <strong>Image Classification on the iNaturalist 2021 dataset</strong> <a href="#ref-4" class="cite-tag">[4]</a>, our curation pipeline is a 
                             <strong>generalizable framework</strong> applicable to any high-dimensional noisy data.
                         </p>
                     </div>
@@ -187,7 +187,7 @@
                 <div class="col-md-6">
                     <div class="p-4 rounded-4 shadow-sm h-100 bg-white border">
                         <h6 class="fw-bold">1. ML Engineers & Researchers</h6>
-                        <p class="small mb-0">Professionals managing large-scale vision models who require rigorous data-pruning tools to reduce training overhead without sacrificing accuracy.</p>
+                        <p class="small mb-0">Professionals managing large-scale vision models who require rigorous data-pruning tools to reduce training overhead without sacrificing performance.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -205,7 +205,7 @@
         <section id="eda" class="container my-5 reveal">
             <h2 class="text-center mb-2">Exploratory Data Analysis</h2>
             <p class="text-center text-muted mb-5" style="max-width:600px;margin:auto;">
-                We begin by characterising the two source datasets and verifying that
+                We begin by inspecting the two source datasets and verifying that
                 their embedding spaces are compatible before any training occurs.
             </p>
         
@@ -217,7 +217,7 @@
                             <div class="fs-1">🌳</div>
                             <h5 class="card-title mt-3">iNaturalist 2021</h5>
                             <p class="card-text text-muted">
-                                Large, naturalistic dataset <a href="#ref-3" class="cite-tag">[3]</a> containing a broad mix of species observations,
+                                Large, naturalistic dataset <a href="#ref-4" class="cite-tag">[4]</a> containing a broad mix of species observations,
                                 including many irrelevant to our target task.
                                 Serves as the <strong>noisy training pool</strong>.
                             </p>
@@ -235,7 +235,7 @@
                             <h5 class="card-title mt-3">Insects Image Dataset</h5>
                             <p class="card-text text-muted">
                                 Smaller, curated collection of high-quality insect photographs
-                                covering the target bug categories.
+                                covering the target insect categories.
                                 Serves as the <strong>clean validation reference</strong>.
                             </p>
                             <div class="text-center mt-3">
@@ -351,7 +351,7 @@
                                             class="img-fluid rounded-3" 
                                         >
                                         <figcaption class="small text-muted mt-2">
-                                            The image above illustrates how the <strong>MMD</strong> 
+                                            The image above illustrates how <strong>MMD</strong> 
                                             measures the distance between two probability distributions, P and Q, 
                                             by embedding them as points into a <strong>Reproducing Kernel Hilbert Space (RKHS)</strong> 
                                             and calculating the Euclidean distance between those embeddings.
@@ -368,7 +368,7 @@
                             <p class="small mb-3">
                                 CLIP-ViT-L-14 embeddings from the full iNaturalist training pool are scored
                                 against the clean validation embeddings. The <strong>top 4,000 images</strong>
-                                by KAIROS value score are selected as the curated training set, discarding noisy,
+                                ranked by KAIROS are selected as the curated training set, discarding noisy,
                                 off-distribution, or mislabelled samples.
                             </p>
                             <h5 class="fw-bold">Results</h5>
@@ -411,7 +411,7 @@
                                     <div class="badge bg-success mb-2">The Pivot</div>
                                     <h6 class="fw-bold">Model-Agnostic Corruption</h6>
                                     <p class="small mb-0">
-                                        We shifted noise injection to the <strong>Image Pre-processing Stage</strong>. By corrupting raw pixels, we created a benchmark that reflects real-world artifacts like motion blur and sensor noise.
+                                        We shifted noise injection to the image pre-processing stage. By corrupting raw pixels, we created a benchmark that reflects real-world artifacts like motion blur and sensor noise.
                                     </p>
                                 </div>
                             </div>
@@ -428,13 +428,13 @@
         <section id="finetuning" class="container my-5 reveal">
             <h2 class="mb-4 text-center">Downstream Model Fine-Tuning</h2>
             
-            <p class="mb-4">We compared two fine-tuning methods to identify the optimal balance between data volume and model precision:</p>
+            <p class="mb-4">We compared two fine-tuning methods to identify the optimal balance between data volume and model performance:</p>
             <div class="row g-4 mb-5">
                 <div class="col-md-6">
                     <div class="card h-100 border-0 shadow-sm border-start border-4" style="border-color: #d90429 !important;">
                         <div class="card-body">
                             <h5 class="fw-bold">Partial Unfreezing</h5>
-                            <p class="small mb-0">Training only the final ResNet layers to adapt pre-trained weights to our specific insect categories.</p>
+                            <p class="small mb-0">Training only the final ResNet layers <a href="#ref-2" class="cite-tag">[2]</a> to adapt pre-trained weights to our specific insect categories.</p>
                         </div>
                     </div>
                 </div>
@@ -655,7 +655,7 @@
                             </p>
                             
                             <p class="small mb-3 text-start">
-                                As seen in the plot to the left, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
+                                As seen in the performance across data sizes plot, adding lower-ranked data beyond this threshold increases compute costs linearly while accuracy and F1 scores plateau.
                             </p>
                     
                             
