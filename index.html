@@ -119,7 +119,7 @@
                             <span class="h5 mb-0 text-dark">Efficiency Gain</span>
                         </div>
                         <p class="small mb-0 text-dark" style="opacity: 0.85;">
-                            KAIROS-curated subsets retained <strong>98.9%<strong> of the full dataset’s AUC while reducing training time by <strong>93.7%<strong>, and even slightly improved F1 (0.763 vs 0.757).
+                            KAIROS-curated subsets retained <strong>98.9%</strong> of the full dataset’s AUC while reducing training time by <strong>93.7%</strong>, and even slightly improved F1 (0.763 vs 0.757).
                         </p>
                     </div>
                 </div>
@@ -508,6 +508,19 @@
                     We conducted three primary sets of experiments to evaluate the utility of KAIROS-curated subsets in training our robust insect image classifier. 
                     All metrics reported as <strong>Mean ± Standard Deviation</strong> across 3 independent trials.
                 </p>
+
+                <div class="container mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="p-3 bg-light border-start border-3 border-secondary rounded-end shadow-sm">
+                                <p class="small text-dark mb-0">
+                                    <span class="badge bg-secondary me-2">Technical Setup</span>
+                                    For each trial, the dataset was partitioned into a random <strong>80/20 train-validation split</strong> using a unique random seed. To prevent <strong>weight leakage</strong>, ResNet-50 weights were re-initialized to their pre-trained state before every run.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card border-0 shadow-sm mb-5 bg-light">
                     <div class="card-body p-4">
