@@ -382,6 +382,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container mb-5">
+                <h4 class="mb-4">Iteration & Evolution</h4>
+                <div class="card border-0 shadow-sm p-4 bg-white border">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="small">
+                                <strong>Initial Approach:</strong> We originally simulated data "messiness" by adding noise to CLIP embeddings. However, this tied our results to one specific encoder version, limiting the framework's flexibility.
+                            </p>
+                            <p class="small">
+                                <strong>The Pivot:</strong> We shifted noise injection to the <strong>Image Pre-processing Stage</strong>. By corrupting raw pixels instead of latent vectors, we created a model-agnostic benchmark that reflects real-world visual artifacts like motion blur and sensor noise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
        
 
