@@ -378,6 +378,37 @@
                                 class="img-fluid rounded-3 mt-1"
                                 style="width:100%;"
                             >
+
+                            <h5 class="fw-bold mt-4">Key Insights</h5>
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <span class="badge rounded-pill px-3 py-2 mb-2 fw-bold text-dark" style="background-color: #cfe2ff; font-size: 0.95rem;">
+                                        Signal Separation:
+                                    </span>
+                                    <p class="small text-dark mb-0">
+                                        The distribution confirms clear mathematical separation; <strong>noisy samples</strong> cluster at lower, negative scores, while <strong>clean samples</strong> (n=3166) receive significantly higher valuations. This allows for an automated audit layer that filters corrupted data.
+                                    </p>
+                                </div>
+                
+                                <div class="mb-3">
+                                    <span class="badge rounded-pill px-3 py-2 mb-2 fw-bold text-dark" style="background-color: #ffc107; font-size: 0.95rem;">
+                                        Noise Resilience:
+                                    </span>
+                                    <p class="small text-dark mb-0">
+                                        At 9 standard deviations of noise, the <strong>AUC reaches 0.98</strong> and <strong>Precision hits 0.95</strong>, proving KAIROS effectively prioritizes remaining clean samples even under extreme corruption.
+                                    </p>
+                                </div>
+                
+                                <div>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2 fw-bold text-dark" style="background-color: #e0cffc; font-size: 0.95rem;">
+                                        Curation Efficiency:
+                                    </span>
+                                    <p class="small text-dark mb-0">
+                                        Scaling the curated subset from 4k to 8k images results in a <strong>44% jump in Precision</strong> (0.47 to 0.68) and a <strong>44% increase in Recall</strong> (0.52 to 0.75). This enables high-performance model alignment with minimal manual auditing effort.
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
