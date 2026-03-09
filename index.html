@@ -351,7 +351,7 @@
                                             class="img-fluid rounded-3" 
                                         >
                                         <figcaption class="small text-muted mt-2">
-                                            The image illustrates how the <strong>MMD</strong> 
+                                            The image above illustrates how the <strong>MMD</strong> 
                                             measures the distance between two probability distributions, P and Q, 
                                             by embedding them as points into a <strong>Reproducing Kernel Hilbert Space (RKHS)</strong> 
                                             and calculating the Euclidean distance between those embeddings.
@@ -707,6 +707,31 @@
                 
                 <div class="info-box border-start-pink">
                     <p class="small mb-0"><strong>Known Limitations:</strong> KAIROS assumes the validation set is gold standard. Biased validation sets will propagate bias into the training pool.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h4 class="mb-4 fw-bold">Future Work</h4>
+                    <div class="card border-0 shadow-sm p-4 bg-white border">
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex mb-3">
+                                <div>
+                                    <strong>Deployment Considerations:</strong> 
+                                    <p class="small text-muted mb-0">To ensure production reliability, the KAIROS pipeline should be integrated as an automated data-auditing layer that flags low-value or corrupted samples before they reach the training cluster, significantly reducing GPU waste.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <div>
+                                    <strong>Next Steps:</strong> 
+                                    <p class="small text-muted mb-0">Future work will focus on scaling this MMD-based valuation framework to Large Language Models (LLMs), specifically for ranking instruction-tuning pairs to improve model alignment with smaller, higher-quality datasets.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
